@@ -16,6 +16,7 @@ use Mediaopt\DHL\Api\ParcelShipping\Model\VAS;
 use Mediaopt\DHL\Api\ParcelShipping\Model\VASDhlRetoure;
 use Mediaopt\DHL\Api\ParcelShipping\Model\VASIdentCheck;
 use Mediaopt\DHL\Application\Model\Order;
+use Mediaopt\DHL\Exception\WebserviceException;
 use Mediaopt\DHL\Model\MoDHLService;
 use Mediaopt\DHL\Shipment\Process;
 use OxidEsales\Eshop\Core\Registry;
@@ -223,13 +224,20 @@ class ParcelShippingCustomRequestBuilder
             $initialized = true;
         }
         if ($process->supportsAdditionalInsurance() && filter_var($servicesData['additionalInsurance']['active'], FILTER_VALIDATE_BOOLEAN)) {
-            $details = $servicesData['additionalInsurance']['insuranceAmount'] ?? null;
-            $services->setAdditionalInsurance($this->createValue($details));
-            $initialized = true;
+            if ($details = $servicesData['additionalInsurance']['insuranceAmount'] ?? null) {
+                if (strpos($details, ',') !== false) {
+                    $details = \OxidEsales\EshopCommunity\Core\Registry::getUtils()->string2Float($details);
+                }
+                $services->setAdditionalInsurance($this->createValue($details));
+                $initialized = true;
+            }
         }
         if ($process->supportsCashOnDelivery() && filter_var($servicesData['cashOnDelivery']['active'], FILTER_VALIDATE_BOOLEAN)) {
             $cashOnDelivery = oxNew(ParcelShippingRequestBuilder::class)->createCashOnDelivery($order);
             if ($details = $servicesData['cashOnDelivery']['codAmount'] ?? null) {
+                if (strpos($details, ',') !== false) {
+                    $details = \OxidEsales\EshopCommunity\Core\Registry::getUtils()->string2Float($details);
+                }
                 $cashOnDelivery->setAmount($this->createValue($details));
             }
             $services->setCashOnDelivery($cashOnDelivery);
