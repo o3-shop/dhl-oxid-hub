@@ -18,6 +18,7 @@ use Mediaopt\DHL\Api\ParcelShipping\Model\VASDhlRetoure;
 use Mediaopt\DHL\Api\ParcelShipping\Model\VASIdentCheck;
 use Mediaopt\DHL\Api\ParcelShipping\Model\Weight;
 use Mediaopt\DHL\Application\Model\Order;
+use Mediaopt\DHL\Exception\WebserviceException;
 use Mediaopt\DHL\Export\CsvExporter;
 use Mediaopt\DHL\Model\MoDHLGoGreenProgram;
 use Mediaopt\DHL\Model\MoDHLNotificationMode;
@@ -260,6 +261,9 @@ class ParcelShippingRequestBuilder extends BaseShipmentBuilder
         if ($process->supportsBulkyGood() && $order->moDHLUsesService(MoDHLService::MO_DHL__BULKY_GOOD)) {
             $services->setBulkyGoods(true);
             $initialized = true;
+        }
+        if (!$process->supportsCashOnDelivery() && $order->moDHLUsesService(MoDHLService::MO_DHL__CASH_ON_DELIVERY)) {
+            throw new WebserviceException('MO_DHL__ERROR_CASHONDELIVERY_FOR_KLEINPAKET');
         }
         if ($process->supportsCashOnDelivery() && $order->moDHLUsesService(MoDHLService::MO_DHL__CASH_ON_DELIVERY)) {
             $cashOnDelivery = $this->createCashOnDelivery($order);

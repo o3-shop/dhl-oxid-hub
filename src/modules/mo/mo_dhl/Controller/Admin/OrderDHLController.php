@@ -167,12 +167,17 @@ class OrderDHLController extends \OxidEsales\Eshop\Application\Controller\Admin\
      */
     public function prepareCustomLabel()
     {
-        /** @var $request ShipmentOrderRequest */
-        [$query, $request] = $this->buildShipmentOrderRequest();
-        $shipment = $request->getShipments()[0];
-        $customShipmentBuilder = new ParcelShippingCustomRequestBuilder();
-        $this->addTplParam('shipmentOrder', $customShipmentBuilder->toCustomizableParametersArray($query, $shipment, $this->getOrder()));
-        $this->setTemplateName('mo_dhl__order_dhl_custom_label.tpl');
+        try {
+            /** @var $request ShipmentOrderRequest */
+            [$query, $request] = $this->buildShipmentOrderRequest();
+            $shipment = $request->getShipments()[0];
+            $customShipmentBuilder = new ParcelShippingCustomRequestBuilder();
+            $this->addTplParam('shipmentOrder', $customShipmentBuilder->toCustomizableParametersArray($query, $shipment, $this->getOrder()));
+            $this->setTemplateName('mo_dhl__order_dhl_custom_label.tpl');
+
+        } catch (\Exception $e) {
+            $this->displayErrors($e);
+        }
     }
 
     /**
@@ -472,6 +477,7 @@ class OrderDHLController extends \OxidEsales\Eshop\Application\Controller\Admin\
      * @return array
      * @throws \OxidEsales\Eshop\Core\Exception\DatabaseConnectionException
      * @throws \OxidEsales\Eshop\Core\Exception\SystemComponentException
+     * @throws \Exception
      */
     protected function buildShipmentOrderRequest(): array
     {
