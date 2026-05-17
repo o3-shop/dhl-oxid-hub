@@ -132,7 +132,7 @@ class StandortsucheTest extends TestCase
                 'coordinate' => new Coordinate(52.519938, 13.413183),
             ],
             [
-                'address'    => $this->buildAddress('', '', '', 'Auerbach/Vogtl.', '', '', 'DE'),
+                'address'    => $this->buildAddress('Auerbach/Vogtl.', '', '', '', '', '', 'DE'),
                 'coordinate' => new Coordinate(50.507884, 12.399722),
             ],
         ];

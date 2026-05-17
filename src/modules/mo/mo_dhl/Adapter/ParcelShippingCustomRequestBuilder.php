@@ -16,7 +16,6 @@ use Mediaopt\DHL\Api\ParcelShipping\Model\VAS;
 use Mediaopt\DHL\Api\ParcelShipping\Model\VASDhlRetoure;
 use Mediaopt\DHL\Api\ParcelShipping\Model\VASIdentCheck;
 use Mediaopt\DHL\Application\Model\Order;
-use Mediaopt\DHL\Exception\WebserviceException;
 use Mediaopt\DHL\Model\MoDHLService;
 use Mediaopt\DHL\Shipment\Process;
 use OxidEsales\Eshop\Core\Registry;
