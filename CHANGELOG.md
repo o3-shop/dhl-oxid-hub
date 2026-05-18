@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.9.1] - 2025-11-12
+* bugfix: prevent the usage of the Nachnahme service for Kleinpaket, as it is not supported for this product
+* bugfix: handle comma in price inputs for additional insurance and cash on delivery in the custom label form
+* bugfix: unit test adjustment
+
 ## [1.9.0] - 2025-11-05
 * Introduced GoGreen Plus program
 * Updated Parcel Shipping API to 2.1.13
