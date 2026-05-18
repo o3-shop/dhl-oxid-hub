@@ -231,6 +231,9 @@ class ParcelShippingCustomRequestBuilder
                 $initialized = true;
             }
         }
+        if (!$process->supportsCashOnDelivery() && filter_var($servicesData['cashOnDelivery']['active'], FILTER_VALIDATE_BOOLEAN)) {
+            throw new WebserviceException('MO_DHL__ERROR_CASHONDELIVERY_FOR_KLEINPAKET');
+        }
         if ($process->supportsCashOnDelivery() && filter_var($servicesData['cashOnDelivery']['active'], FILTER_VALIDATE_BOOLEAN)) {
             $cashOnDelivery = oxNew(ParcelShippingRequestBuilder::class)->createCashOnDelivery($order);
             if ($details = $servicesData['cashOnDelivery']['codAmount'] ?? null) {
