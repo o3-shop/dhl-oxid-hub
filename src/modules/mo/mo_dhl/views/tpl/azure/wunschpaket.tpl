@@ -6,7 +6,7 @@
         <div id="moDHLWunschpaket"
              class="theme--is-azure"
              data-theme="azure" data-dateajax="[{$oViewConf->getSslSelfLink()}]cl=MoDHLYellowBox&zip=">
-            <img src="[{$oViewConf->getModuleUrl("mo_dhl", "out/src/img/DHL_rgb_265px.png")}]"/>
+            <img src="[{$oViewConf->getModuleUrl("o3_dhl", "out/src/img/DHL_rgb_265px.png")}]"/>
 
             <h3>[{oxmultilang ident="MO_DHL__WUNSCHPAKET"}]</h3>
 

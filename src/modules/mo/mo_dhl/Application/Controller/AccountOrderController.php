@@ -108,7 +108,7 @@ class AccountOrderController extends AccountOrderController_parent
         try {
             $format = Registry::get(\OxidEsales\Eshop\Core\Request::class)->getRequestEscapedParameter('format');
             $labelUrl = $format === 'qr' ? $label->getFieldData('qrLabelUrl') : $label->getFieldData('labelUrl');
-            $labelFile = str_replace(Registry::get(ViewConfig::class)->getModuleUrl('mo_dhl'), Registry::get(ViewConfig::class)->getModulePath('mo_dhl'), $labelUrl);
+            $labelFile = str_replace(Registry::get(ViewConfig::class)->getModuleUrl('o3_dhl'), Registry::get(ViewConfig::class)->getModulePath('o3_dhl'), $labelUrl);
             if (!file_exists($labelFile)) {
                 $this->moDHLHandleError('label can not be loaded', $data);
                 return 'account_order';

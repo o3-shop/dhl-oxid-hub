@@ -1,6 +1,6 @@
 [{$smarty.block.parent}]
-[{oxstyle include=$oViewConf->getModuleUrl("mo_dhl", "out/src/css/widgets/mo_dhl.css")}]
-[{oxscript include=$oViewConf->getModuleUrl("mo_dhl", "out/src/js/widgets/mo_dhl__deliveryAddress.js")}]
+[{oxstyle include=$oViewConf->getModuleUrl("o3_dhl", "out/src/css/widgets/mo_dhl.css")}]
+[{oxscript include=$oViewConf->getModuleUrl("o3_dhl", "out/src/js/widgets/mo_dhl__deliveryAddress.js")}]
 
 [{if $oViewConf->moHasAncestorTheme('azure')}]
     [{oxscript add='$(function(){mo_dhl__deliveryAddress.rearrangeAddress($(".shippingAddress > dd"));});'}]
@@ -10,7 +10,7 @@
 
 [{assign var="location" value=$oView->moDHLGetLocation()}]
 [{if $location[0] || $oView->moDHLGetWunschtag()}]
-    [{oxscript include=$oViewConf->getModuleUrl("mo_dhl", "out/src/js/widgets/mo_dhl__wunschpaket.js") priority=9}]
+    [{oxscript include=$oViewConf->getModuleUrl("o3_dhl", "out/src/js/widgets/mo_dhl__wunschpaket.js") priority=9}]
     [{oxscript add='$(function(){mo_dhl__wunschpaket.moveWunschpaketBoxes();});'}]
 [{/if}]
 [{if $oViewConf->moHasAncestorTheme('azure')}]
@@ -25,7 +25,7 @@
             <dl>
                 <dd>
                     <div id="moDHLWunschpaket">
-                        <img src="[{$oViewConf->getModuleUrl("mo_dhl", "out/src/img/DHL_rgb_265px.png")}]"/>
+                        <img src="[{$oViewConf->getModuleUrl("o3_dhl", "out/src/img/DHL_rgb_265px.png")}]"/>
 
                         <h3>[{oxmultilang ident="MO_DHL__WUNSCHPAKET_CHECKOUT"}]</h3>
 
@@ -74,7 +74,7 @@
             </h3>
             <dl>
                 <div id="moDHLWunschpaket">
-                    <img src="[{$oViewConf->getModuleUrl("mo_dhl", "out/src/img/DHL_rgb_265px.png")}]"/>
+                    <img src="[{$oViewConf->getModuleUrl("o3_dhl", "out/src/img/DHL_rgb_265px.png")}]"/>
 
                     <h3>[{oxmultilang ident="MO_DHL__NO_WUNSCHPAKET"}]</h3>
                     <p>
@@ -92,7 +92,7 @@
                 <div class="panel panel-default" id="moDHLCheckoutBox">
                     <div class="panel-heading">
                         <img class="moEmpfaengerserviceWunschpaketBox--image"
-                             src="[{$oViewConf->getModuleUrl("mo_dhl", "out/src/img/DHL_rgb_265px.png")}]"/>
+                             src="[{$oViewConf->getModuleUrl("o3_dhl", "out/src/img/DHL_rgb_265px.png")}]"/>
                         <a href="[{oxgetseourl ident=$oViewConf->getOrderLink()}]">
                             <button type="submit" class="btn btn-xs btn-warning pull-right submitButton largeButton"
                                     title="[{oxmultilang ident="EDIT"}]">
@@ -152,7 +152,7 @@
                 <div class="panel panel-default" id="moDHLCheckoutBox">
                     <div class="panel-heading">
                         <img class="moEmpfaengerserviceWunschpaketBox--image"
-                             src="[{$oViewConf->getModuleUrl("mo_dhl", "out/src/img/DHL_rgb_265px.png")}]"/>
+                             src="[{$oViewConf->getModuleUrl("o3_dhl", "out/src/img/DHL_rgb_265px.png")}]"/>
                         <a href="[{oxgetseourl ident=$oViewConf->getOrderLink()}]">
                             <button type="submit" class="btn btn-xs btn-warning pull-right submitButton largeButton"
                                     title="[{oxmultilang ident="EDIT"}]">
@@ -179,7 +179,7 @@
                     <div class="card" id="moDHLCheckoutBox">
                         <div class="card-header">
                             <img class="moEmpfaengerserviceWunschpaketBox--image"
-                                 src="[{$oViewConf->getModuleUrl("mo_dhl", "out/src/img/DHL_rgb_265px.png")}]"/>
+                                 src="[{$oViewConf->getModuleUrl("o3_dhl", "out/src/img/DHL_rgb_265px.png")}]"/>
                             <a href="[{oxgetseourl ident=$oViewConf->getOrderLink()}]">
                                 <button type="submit" class="btn btn-sm btn-warning float-right submitButton largeButton edit-button"
                                         title="[{oxmultilang ident="EDIT"}]">
@@ -240,7 +240,7 @@
                     <div class="card" id="moDHLCheckoutBox">
                         <div class="card-header">
                             <img class="moEmpfaengerserviceWunschpaketBox--image"
-                                 src="[{$oViewConf->getModuleUrl("mo_dhl", "out/src/img/DHL_rgb_265px.png")}]"/>
+                                 src="[{$oViewConf->getModuleUrl("o3_dhl", "out/src/img/DHL_rgb_265px.png")}]"/>
                             <a href="[{oxgetseourl ident=$oViewConf->getOrderLink()}]">
                                 <button type="submit" class="btn btn-sm btn-warning float-right submitButton largeButton edit-button"
                                         title="[{oxmultilang ident="EDIT"}]">

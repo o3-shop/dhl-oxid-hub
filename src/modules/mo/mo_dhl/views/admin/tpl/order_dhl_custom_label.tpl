@@ -417,6 +417,6 @@
 </form>
 <br>
 <br>
-<script type="application/javascript" src="[{$oViewConf->getModuleUrl("mo_dhl", "out/src/js/admin/mo_dhl_process.js")}]"></script>
+<script type="application/javascript" src="[{$oViewConf->getModuleUrl("o3_dhl", "out/src/js/admin/mo_dhl_process.js")}]"></script>
 [{include file="bottomnaviitem.tpl"}]
 [{include file="bottomitem.tpl"}]

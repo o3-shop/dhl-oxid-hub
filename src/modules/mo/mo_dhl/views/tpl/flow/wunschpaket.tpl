@@ -5,7 +5,7 @@
     [{if $oViewConf->moIsAnyWunschpaketFeatureActivated()}]
         <div id="moDHLWunschpaket" class="moDHLWunschpaketFlow col-lg-offset-3"
              data-theme="flow" data-dateajax="[{$oViewConf->getSslSelfLink()}]cl=MoDHLYellowBox&zip=">
-            <img src="[{$oViewConf->getModuleURL("mo_dhl", "out/src/img/DHL_rgb_265px.png")}]"/>
+            <img src="[{$oViewConf->getModuleURL("o3_dhl", "out/src/img/DHL_rgb_265px.png")}]"/>
 
             <h3>[{oxmultilang ident="MO_DHL__WUNSCHPAKET"}]</h3>
 

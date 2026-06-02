@@ -209,8 +209,8 @@
     </td>
     </tr>
 </table>
-<script type="application/javascript" src="[{$oViewConf->getModuleUrl("mo_dhl", "out/src/js/admin/mo_dhl_process.js")}]"></script>
-<link rel="stylesheet" type="text/css" href="[{$oViewConf->getModuleUrl("mo_dhl", "out/src/css/admin/mo_dhl_process.css")}]">
+<script type="application/javascript" src="[{$oViewConf->getModuleUrl("o3_dhl", "out/src/js/admin/mo_dhl_process.js")}]"></script>
+<link rel="stylesheet" type="text/css" href="[{$oViewConf->getModuleUrl("o3_dhl", "out/src/css/admin/mo_dhl_process.css")}]">
 </form>
 
 [{include file="bottomnaviitem.tpl"}]

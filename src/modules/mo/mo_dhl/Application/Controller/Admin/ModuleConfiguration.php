@@ -115,7 +115,7 @@ class ModuleConfiguration extends ModuleConfiguration_parent
     {
         parent::saveConfVars();
 
-        if ($this->getEditObjectId() === 'mo_dhl') {
+        if ($this->getEditObjectId() === 'o3_dhl') {
             $this->moReviewEkp();
             $this->moReviewFilialroutingAlternativeEmail();
             $this->moReviewWeightSettings();
@@ -151,7 +151,7 @@ class ModuleConfiguration extends ModuleConfiguration_parent
         if (empty($email) || filter_var($email, FILTER_VALIDATE_EMAIL)) {
             return;
         }
-        Registry::getConfig()->saveShopConfVar('str', $mailVariable, '', '', 'module:mo_dhl');
+        Registry::getConfig()->saveShopConfVar('str', $mailVariable, '', '', 'module:o3_dhl');
         Registry::get(UtilsView::class)->addErrorToDisplay('MO_DHL__FILIALROUTING_EMAIL_ERROR');
     }
 
@@ -169,7 +169,7 @@ class ModuleConfiguration extends ModuleConfiguration_parent
             $value = Registry::getConfig()->getConfigParam($setting);
             if (strpos($value, ',') !== false) {
                 $value = \OxidEsales\EshopCommunity\Core\Registry::getUtils()->string2Float($value);
-                Registry::getConfig()->saveShopConfVar('str', $setting, $value, '', 'module:mo_dhl');
+                Registry::getConfig()->saveShopConfVar('str', $setting, $value, '', 'module:o3_dhl');
                 $changed = true;
             }
         }
@@ -189,7 +189,7 @@ class ModuleConfiguration extends ModuleConfiguration_parent
         try {
             Ekp::build($ekp);
         } catch (\InvalidArgumentException $exception) {
-            Registry::getConfig()->saveShopConfVar('str', 'mo_dhl__merchant_ekp', '', '', 'module:mo_dhl');
+            Registry::getConfig()->saveShopConfVar('str', 'mo_dhl__merchant_ekp', '', '', 'module:o3_dhl');
             Registry::get(UtilsView::class)->addErrorToDisplay('MO_DHL__EKP_ERROR');
         }
     }

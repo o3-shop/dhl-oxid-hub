@@ -17,11 +17,11 @@
     </p>
 
     <img id="thumbnail-packstation"
-         src="[{$oViewConf->getModuleUrl("mo_dhl", "out/src/img/icon-packstation.png")}]"/>
+         src="[{$oViewConf->getModuleUrl("o3_dhl", "out/src/img/icon-packstation.png")}]"/>
     <img id="thumbnail-postfiliale"
-         src="[{$oViewConf->getModuleUrl("mo_dhl", "out/src/img/icon-postfiliale.png")}]"/>
+         src="[{$oViewConf->getModuleUrl("o3_dhl", "out/src/img/icon-postfiliale.png")}]"/>
     <img id="thumbnail-paketshop"
-         src="[{$oViewConf->getModuleUrl("mo_dhl", "out/src/img/icon-paketshop.png")}]"/>
+         src="[{$oViewConf->getModuleUrl("o3_dhl", "out/src/img/icon-paketshop.png")}]"/>
 
     <span id="packstation-number-label">Packstationsnr.:</span>
     <span id="postfiliale-number-label">Filialnr.:</span>
@@ -36,15 +36,15 @@
 
         <div class="icons">
             <img class="icon packstation"
-                 src="[{$oViewConf->getModuleUrl("mo_dhl", "out/src/img/icon-packstation-red.png")}]"/>
+                 src="[{$oViewConf->getModuleUrl("o3_dhl", "out/src/img/icon-packstation-red.png")}]"/>
             <img class="icon filiale"
-                 src="[{$oViewConf->getModuleUrl("mo_dhl", "out/src/img/icon-postfiliale-red.png")}]"/>
+                 src="[{$oViewConf->getModuleUrl("o3_dhl", "out/src/img/icon-postfiliale-red.png")}]"/>
             <img class="icon paketshop"
-                 src="[{$oViewConf->getModuleUrl("mo_dhl", "out/src/img/icon-paketshop-red.png")}]"/>
+                 src="[{$oViewConf->getModuleUrl("o3_dhl", "out/src/img/icon-paketshop-red.png")}]"/>
             <img class="icon wheelchair"
-                 src="[{$oViewConf->getModuleUrl("mo_dhl", "out/src/img/icon-wheelchair.png")}]"/>
+                 src="[{$oViewConf->getModuleUrl("o3_dhl", "out/src/img/icon-wheelchair.png")}]"/>
             <img class="icon parking"
-                 src="[{$oViewConf->getModuleUrl("mo_dhl", "out/src/img/icon-parking.png")}]"/>
+                 src="[{$oViewConf->getModuleUrl("o3_dhl", "out/src/img/icon-parking.png")}]"/>
         </div>
 
         <h5 class="moDHLOpeningHours"
@@ -100,7 +100,7 @@
                 <input type="checkbox" id="moDHLPackstation" name="packstation" checked="checked"/>
                 <label for="moDHLPackstation">Packstation
                     <img class="icon packstation valign--middle"
-                         src="[{$oViewConf->getModuleUrl("mo_dhl", "out/src/img/icon-packstation.png")}]"/>
+                         src="[{$oViewConf->getModuleUrl("o3_dhl", "out/src/img/icon-packstation.png")}]"/>
                 </label>
             [{else}]
                 <input type="hidden" id="moDHLPackstation" name="packstation" value="1"/>
@@ -111,9 +111,9 @@
                 <input type="checkbox" id="moDHLFiliale" name="filiale" checked="checked"/>
                 <label for="moDHLFiliale">Filiale
                     <img class="icon packstation postfiliale valign--middle"
-                         src="[{$oViewConf->getModuleUrl("mo_dhl", "out/src/img/icon-postfiliale.png")}]"/>
+                         src="[{$oViewConf->getModuleUrl("o3_dhl", "out/src/img/icon-postfiliale.png")}]"/>
                     <img class="icon packstation paketshop valign--middle"
-                         src="[{$oViewConf->getModuleUrl("mo_dhl", "out/src/img/icon-paketshop.png")}]"/>
+                         src="[{$oViewConf->getModuleUrl("o3_dhl", "out/src/img/icon-paketshop.png")}]"/>
                 </label>
             [{else}]
                 <input type="hidden" id="moDHLFiliale" name="filiale" value="1"/>
@@ -136,7 +136,7 @@
     <h4>[{oxmultilang ident="MO_DHL__POSTNUMMER_INFO_TITLE"}]</h4>
     <div>
         <img class="info--figure"
-             src="[{$oViewConf->getModuleUrl('mo_dhl', 'out/src/img/dhl-postnumber-info.jpg')}]">
+             src="[{$oViewConf->getModuleUrl('o3_dhl', 'out/src/img/dhl-postnumber-info.jpg')}]">
         <p>
             [{oxmultilang ident="MO_DHL__POSTNUMMER_INFO_TEXT"}]
         </p>

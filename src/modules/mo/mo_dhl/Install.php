@@ -33,7 +33,7 @@ class Install
 
     protected static function ensureDocumentsFolderExists()
     {
-        $path = Registry::get(ViewConfig::class)->getModulePath('mo_dhl', '') . 'documents';
+        $path = Registry::get(ViewConfig::class)->getModulePath('o3_dhl', '') . 'documents';
         if (!is_dir($path)) {
             mkdir($path);
         }

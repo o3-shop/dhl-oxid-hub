@@ -1,5 +1,5 @@
 [{$smarty.block.parent}]
 [{if !$order->oxorder__oxstorno->value AND $order->oxorder__oxsenddate->value !="-"}]
-    [{oxstyle include=$oViewConf->getModuleUrl("mo_dhl", "out/src/css/widgets/mo_dhl.css")}]
+    [{oxstyle include=$oViewConf->getModuleUrl("o3_dhl", "out/src/css/widgets/mo_dhl.css")}]
     [{include file="mo_dhl__retoure.tpl"}]
 [{/if}]

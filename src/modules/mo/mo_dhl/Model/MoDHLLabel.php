@@ -111,7 +111,7 @@ class MoDHLLabel extends BaseModel
             'orderId'        => $order->getId(),
             'type'           => self::TYPE_RETOURE,
             'shipmentNumber' => $retoureResponse->getShipmentNumber(),
-            'labelUrl'       => Registry::get(ViewConfig::class)->getModuleUrl('mo_dhl', $fileName . '.pdf'),
+            'labelUrl'       => Registry::get(ViewConfig::class)->getModuleUrl('o3_dhl', $fileName . '.pdf'),
         ]);
 
         if (!empty($retoureResponse->getQrLabelData())) {
@@ -120,7 +120,7 @@ class MoDHLLabel extends BaseModel
                 base64_decode($retoureResponse->getQrLabelData())
             );
             $label->assign([
-                'qrLabelUrl' => Registry::get(ViewConfig::class)->getModuleUrl('mo_dhl', $fileName . '.jpeg'),
+                'qrLabelUrl' => Registry::get(ViewConfig::class)->getModuleUrl('o3_dhl', $fileName . '.jpeg'),
             ]);
         }
 
@@ -134,7 +134,7 @@ class MoDHLLabel extends BaseModel
      */
     protected function storeData($fileName, $data)
     {
-        $path = Registry::get(ViewConfig::class)->getModulePath('mo_dhl', 'documents');
+        $path = Registry::get(ViewConfig::class)->getModulePath('o3_dhl', 'documents');
         file_put_contents($path . DIRECTORY_SEPARATOR . $fileName, $data);
     }
 
@@ -144,7 +144,7 @@ class MoDHLLabel extends BaseModel
      */
     protected function deleteData($fileName)
     {
-        $path = Registry::get(ViewConfig::class)->getModulePath('mo_dhl', 'documents');
+        $path = Registry::get(ViewConfig::class)->getModulePath('o3_dhl', 'documents');
         if (is_file($path . DIRECTORY_SEPARATOR . $fileName)) {
             unlink($path . DIRECTORY_SEPARATOR . $fileName);
         }
