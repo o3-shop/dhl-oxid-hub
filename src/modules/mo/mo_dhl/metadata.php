@@ -11,17 +11,17 @@ $sMetadataVersion = '2.1';
  * Module information
  */
 $aModule = [
-    'id'          => 'mo_dhl',
+    'id'          => 'o3_dhl',
     'title'       => 'Post & Paket Versand',
     'description' => [
-        'de' => '<p>Erweitern Sie Ihren Shop um den Post & Paket Versand.</p>' . '<p><a href="https://projects.mediaopt.de/projects/mopt-postp-ua/wiki" target="_blank">Handbuch</a></p>',
-        'en' => '<p>Enable features providing Post & Paket Delivery to your OXID shop.</p>' . '<p><a href="https://projects.mediaopt.de/projects/mopt-postp-ua/wiki" target="_blank">Handbook</a></p>',
+        'de' => '<p>Erweitere Deinen O3-Shop um den Post & Paket Versand.</p>' . '<p><a href="https://projects.mediaopt.de/projects/mopt-postp-ua/wiki" target="_blank">Handbuch</a></p>',
+        'en' => '<p>Enable features providing Post & Paket Delivery to your O3 shop.</p>' . '<p><a href="https://projects.mediaopt.de/projects/mopt-postp-ua/wiki" target="_blank">Handbook</a></p>',
     ],
     'thumbnail'   => 'logo.png',
     'version'     => '1.0.0',
-    'author'      => '<a href="http://www.mediaopt.de" target="_blank">mediaopt.</a>',
-    'url'         => 'http://www.mediaopt.de',
-    'email'       => 'shopsoftware@deutschepost.de',
+    'author'      => '<a href="http://www.mediaopt.de" target="_blank">mediaopt.</a> & <a href="https://o3-shop.com" target="_blank">o3-shop</a>"',
+    'url'         => 'https://www.o3-shop.com',
+    'email'       => 'info@o3-shop.com',
     'extend'      => [
         \OxidEsales\Eshop\Core\ViewConfig::class                                  => Core\ViewConfig::class,
         \OxidEsales\Eshop\Core\InputValidator::class                              => Core\InputValidator::class,
